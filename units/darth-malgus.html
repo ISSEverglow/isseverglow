@@ -1,15 +1,681 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Дарт Малгус</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
-    <h1>Дарт Малгус</h1>
-    <a href="../index.html">На главную страницу</a>
-  
+    <div class="star-wars-theme">
+        <header class="sw-header">
+            <div class="logo">
+                <img src="../img/logo.jpg" alt="Лого">
+            </div>
+            <h1>ISS EVERGLOW | БАЗА ДАННЫХ</h1>
+        </header>
+
+        <div class="character-container">
+            <!-- Информация о персонаже -->
+            <section class="character-info">
+                <div class="character-portrait">
+                    <img src="../img/units/darthmalgus.png" alt="Дарт Вейдер" class="dark">
+                    <div class="character-level">Уровень реликвии 9</div>
+                </div>
+                <div class="character-details">
+                    <h2 class="dark">Дарт Малгус</h2>
+                    <div class="character-tags">
+                        <span class="tag dark-side">Тёмная сторона</span>
+                        <span class="tag leader">Лидер</span>
+                        <span class="tag role">Танк</span>
+                        <span class="tag">Ситхи</span>
+                        <span class="tag">Империя ситхов</span>
+                    </div>
+                    <div class="character-effects">
+                        <h3>Накладываемые эффекты</h3>
+                        <div class="effects-grid">
+                            <span class="effect">Блокировка способностей</span>
+                            <span class="effect">Урон по области</span>
+                            <span class="effect">Слепота</span>
+                            <span class="effect">Сомнение</span>
+                            <span class="effect">Страх</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Навигация по вкладкам -->
+            <nav class="tabs">
+                <button class="tab-button active" data-tab="abilities">Способности</button>
+                <button class="tab-button" data-tab="mods">Модули</button>
+                <button class="tab-button" data-tab="gear">Снаряжение</button>
+                <button class="tab-button" data-tab="relics">Реликвии</button>
+            </nav>
+
+            <!-- Содержимое вкладок -->
+            <div class="tab-content active" id="abilities">
+                <section class="abilities">
+                    <!-- Способность 1 -->
+                    <div class="ability">
+                        <div class="ability-header">
+                            <div class="ability-title">
+                                <img src="../img/abilities/darthmalgus_basic.png" class="ability-icon">
+                                <h3>Безграничная ярость</h3>
+                            </div>
+                            <div class="ability-meta">
+                                <span class="cooldown">Базовая способность</span>
+                                <span class="ability-type zeta">Дзета</span>
+                            </div>
+                        </div>
+                        <p class="ability-description">Наносит вражеской цели физический урон с 50%-м шансом повторной атаки (вдвое больше, если целью является джедай). Вторая атака увеличивает максимальное здоровье Дарта Малгуса на 20% (суммируется до 100%) до конца схватки. На эти атаки нельзя ответить контратакой, и от них нельзя увернуться. На 2 хода повышает критический урон союзников из Империи ситхов.</p>
+                        <div class="ability-upgrades">
+                            <button class="toggle-upgrades-btn">
+                                <span class="show-text">Показать улучшения</span>
+                                <span class="hide-text" style="display:none;">Скрыть улучшения</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <table style="display: none;">
+                                <thead>
+                                    <tr>
+                                        <th class="level">Уровень</th>
+                                        <th class="cost" colspan="4">Стоимость</th>
+                                        <th class="effect-upgrade">Эффект</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cell-level">2</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">700</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost"></div>
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span>3</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost"></td>
+                                        <td class="cell-cost"></td>
+                                        <td class="cell-effect">+5% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">3</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">1400</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">4</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span>4</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost"></td>
+                                        <td class="cell-effect">+5% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">4</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">2100</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">5</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span class="cost-amount">5</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span>4</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect">+10% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">5</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">4100</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">7</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span class="cost-amount">7</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span>5</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect">+10% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">6</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">8200</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">10</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span class="cost-amount">9</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span>6</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect">+15% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">7</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">24.7K</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">16</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span class="cost-amount">13</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span>9</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect">+15% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">8</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">145K</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span class="cost-amount">40</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymaterialomega.png" class="cost-icon">
+                                                    <span class="cost-amount">16</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymaterialzeta.png" class="cost-icon">
+                                                    <span>20</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect">Повторная атака Дарта Малгуса увеличивает максимальное здоровье до конца схватки на 20% (эффект суммируется, но не может превышать 100%); на эту атаку нельзя ответить контратакой, и от неё нельзя увернуться</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Способность 2 -->
+                    <div class="ability">
+                        <div class="ability-header">
+                            <div class="ability-title">
+                                <img src="../img/abilities/darthmalgus_special1.png" class="ability-icon">
+                                <h3>Без чувств</h3>
+                            </div>
+                            <div class="ability-meta">
+                                <span class="cooldown">Особая способность | Перезарядка: 3</span>
+                                <span class="ability-type omicron">Омикрон</span>
+                            </div>
+                        </div>
+                        <p class="ability-description">Наносит физический урон вражеской цели и накладывает на неё слепоту и потрясение на 2 хода. Если на цель уже действует потрясение, накладывает потрясение на всех врагов на 2 хода и блокировку способностей на вражескую цель на 2 хода. Дарт Малгус получает провокацию на 2 хода.</p>
+                        <p class="ability-description"><span style="color: var(--sw-dark-yellow)">На Великой арене:</span> против отрицательных эффектов, накладываемых этой способностью, не действует сопротивление, и все союзники из Империи ситхов получают повышение шанса на критический удар на 2 хода. Если на цель уже было наложено потрясение, наносит чистый урон всем остальным врагам, а Дарт Малгус получает 50% шкалы хода.</p>
+                        <div class="ability-upgrades">
+                            <button class="toggle-upgrades-btn">
+                                <span class="show-text">Показать улучшения</span>
+                                <span class="hide-text" style="display:none;">Скрыть улучшения</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <table style="display: none;">
+                                <thead>
+                                    <tr>
+                                        <th class="level">Уровень</th>
+                                        <th class="cost" colspan="4">Стоимость</th>
+                                        <th class="effect-upgrade">Эффект</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cell-level">2</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">1300</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost"></div>
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span>2</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost"></td>
+                                        <td class="cell-cost"></td>
+                                        <td class="cell-effect">+5% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">3</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">2500</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">3</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span>3</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost"></td>
+                                        <td class="cell-effect">+5% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">4</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">3800</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">4</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span class="cost-amount">4</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span>3</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect">+10% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">5</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">7500</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">5</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span class="cost-amount">5</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span>4</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect">+10% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">6</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">15.1K</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">8</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span class="cost-amount">7</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span>5</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect">+15% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">7</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">45.2K</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel1.png" class="cost-icon">
+                                                    <span class="cost-amount">12</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel2.png" class="cost-icon">
+                                                    <span class="cost-amount">10</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span>7</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect">+20% к урону</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell-level">8</td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/resources/credit.png" class="cost-icon">
+                                                    <span class="cost-amount">145K</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymateriallevel3.png" class="cost-icon">
+                                                    <span class="cost-amount">40</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymaterialomega.png" class="cost-icon">
+                                                    <span class="cost-amount">16</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-cost">
+                                            <div class="upgrade-cost">
+                                                <div class="cost-item">
+                                                    <img src="../img/ability_materials/abilitymaterialomicron.png" class="cost-icon">
+                                                    <span>20</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-effect"><span style="color: var(--sw-dark-yellow)">На Великой арене:</span> против отрицательных эффектов, накладываемых этой способностью, не действует сопротивление, и все союзники из Империи ситхов получают повышение шанса на критический удар на 2 хода. Если на цель уже было наложено потрясение, наносит чистый урон всем остальным врагам, а Дарт Малгус получает 50% шкалы хода.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    
+                </section>
+            </div>
+
+            <div class="tab-content" id="gear">
+                <section class="gear">
+                    <h3>Необходимое снаряжение</h3>
+                    <div class="gear-grid">
+                        <div class="gear-item">
+                            <img src="https://via.placeholder.com/50x50?text=Gear1" alt="Снаряжение 1">
+                            <span>Мк 5 Оглушающий бластер</span>
+                        </div>
+                        <div class="gear-item">
+                            <img src="https://via.placeholder.com/50x50?text=Gear2" alt="Снаряжение 2">
+                            <span>Мк 3 Голопроектор</span>
+                        </div>
+                        <div class="gear-item">
+                            <img src="https://via.placeholder.com/50x50?text=Gear3" alt="Снаряжение 3">
+                            <span>Мк 5 Плавильная печь</span>
+                        </div>
+                        <div class="gear-item">
+                            <img src="https://via.placeholder.com/50x50?text=Gear4" alt="Снаряжение 4">
+                            <span>Мк 6 Медпак</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="tab-content" id="relics">
+                <section class="relics">
+                    <h3>Уровни реликвий</h3>
+                    <div class="relic-selector">
+                        <button class="relic-level" data-level="0">0</button>
+                        <button class="relic-level" data-level="1">1</button>
+                        <button class="relic-level" data-level="2">2</button>
+                        <button class="relic-level" data-level="3">3</button>
+                        <button class="relic-level" data-level="4">4</button>
+                        <button class="relic-level" data-level="5">5</button>
+                        <button class="relic-level" data-level="6">6</button>
+                        <button class="relic-level active" data-level="7">7</button>
+                    </div>
+                    <div class="stats-display">
+                        <div class="stat">
+                            <span class="stat-name">Здоровье</span>
+                            <span class="stat-value" id="health">35,280</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-name">Защита</span>
+                            <span class="stat-value" id="protection">28,224</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-name">Скорость</span>
+                            <span class="stat-value" id="speed">148</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-name">Физ. урон</span>
+                            <span class="stat-value" id="phys-dmg">4,512</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-name">Шанс крита</span>
+                            <span class="stat-value" id="phys-crit">42.5%</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="shard-locations">
+                <h3>Места добычи осколков</h3>
+                <div class="locations-grid">
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Кантина 1-F</span>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Магазин арены</span>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-gift"></i>
+                        <span>Магазин флота</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="sw-footer">
+            <p>Фанатский сайт. STAR WARS и все связанные элементы являются товарными знаками Lucasfilm Ltd.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
