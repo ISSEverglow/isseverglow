@@ -1,3 +1,579 @@
+/* Базовые стили */
+:root {
+    --sw-dark: #0a0a12;
+    --sw-darker: #050508;
+    --sw-gray: #1e1e26;
+    --sw-light-gray: #3a3a4a;
+    --sw-dark-yellow: #f4c430;
+    --sw-yellow: #ffe81f;
+    --sw-red: #e10600;
+    --sw-blue: #4d88ff;
+    --sw-light-green: #00ff00;
+    --sw-green: #4CAF50;
+    --sw-purple: #9c27b0;
+    --sw-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Electrolize Cyrillic';
+    src: url('../fonts/electrolizerusbydaymarius.ttf') format('truetype');
+}
+
+body {
+    background-color: var(--sw-dark);
+    color: #fff;
+    font-family: 'Electrolize Cyrillic', sans-serif;
+    line-height: 1.6;
+}
+
+.star-wars-theme {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Типографика */
+h1, h2, h3 {
+    font-family: 'Electrolize Cyrillic', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 h1 {
-  font-family: ""
+    font-size: 2rem;
+    color: var(--sw-yellow);
+    text-align: center;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--sw-yellow);
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Тёмная и Светлая стороны */
+.dark {
+    color: var(--sw-red);
+}
+
+.light {
+    color: var(--sw-blue);
+}
+
+.neutral {
+    color: var(--sw-light-gray);
+}
+
+/* Шапка */
+.sw-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--sw-yellow);
+    margin-bottom: 30px;
+}
+
+.logo img {
+    height: 100px;
+}
+
+/* Информация о персонаже */
+.character-container {
+    background-color: var(--sw-gray);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.character-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.character-portrait {
+    position: relative;
+    flex: 0 0 200px;
+}
+
+.character-portrait img {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid var(--sw-yellow);
+}
+
+.character-portrait img.dark {
+    border: 2px solid var(--sw-red);
+}
+
+.character-portrait img.light {
+    border: 2px solid var(--sw-blue);
+}
+
+.character-portrait img.neutral {
+    border: 2px solid var(--sw-light-gray);
+}
+
+.character-level {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    background-color: var(--sw-purple);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.character-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.character-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.tag {
+    background-color: var(--sw-light-gray);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.tag.dark-side {
+    background-color: var(--sw-red);
+}
+
+.tag.light-side {
+    background-color: var(--sw-blue);
+}
+
+.tag.leader {
+    background-color: var(--sw-dark-yellow);
+}
+
+.tag.role {
+    background-color: var(--sw-green);
+}
+
+.character-effects {
+    margin-top: 20px;
+}
+
+.effects-grid {
+    display: flex;
+    /*grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));*/
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.effect {
+    background-color: var(--sw-light-gray);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+/* Вкладки */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--sw-light-gray);
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'Electrolize Cyrillic', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.tab-button:hover {
+    color: var(--sw-yellow);
+}
+
+.tab-button.active {
+    color: var(--sw-yellow);
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--sw-yellow);
+}
+
+.tab-content {
+    display: none;
+    padding: 15px 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Способности */
+.ability {
+    background-color: var(--sw-darker);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--sw-yellow);
+}
+
+.ability-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ability-meta {
+    display: flex;
+    gap: 15px;
+}
+
+.cooldown {
+    color: var(--sw-blue);
+}
+
+.ability-type {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.ability-type.omega {
+    background-color: var(--sw-yellow);
+    color: #000;
+}
+
+.ability-type.zeta {
+    background-color: var(--sw-purple);
+    color: #fff;
+}
+
+.ability-type.omicron {
+    background-color: var(--sw-white);
+    color: #000;
+}
+
+.ability-description {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.ability-upgrades table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    padding-left: 5px;
+    animation: fadeIn 0.3s ease;
+}
+
+.ability-upgrades th, 
+.ability-upgrades td {
+    padding: 8px 1px;
+    text-align: left;
+    border-bottom: 1px solid var(--sw-light-gray);
+}
+
+.ability-upgrades th {
+    background-color: var(--sw-light-gray);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem; 
+}
+
+.ability-upgrades th.level {
+    padding-left: 5px;
+    width: 90px;
+}
+
+.ability-upgrades th.cost {
+    width: 100px;
+}
+
+.ability-upgrades th.effect-upgrade {
+    padding-left: 20px;
+}
+
+.ability-upgrades td.cell-level {
+    padding-left: 5px;
+}
+
+.ability-upgrades td.cell-effect {
+    padding-left: 20px;
+}
+
+.ability-upgrades tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ability-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ability-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 10%;
+    border: 2px solid var(--sw-yellow);
+    object-fit: contain;
+    background-color: var(--sw-darker);
+}
+
+.upgrade-cost {
+    display: flex;
+    align-items: center;
+}
+
+.cell-cost {
+    width: 25px;
+}
+
+.cost-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.cost-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.cost-amount {
+    margin-right: 10px;
+}
+
+.toggle-upgrades-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--sw-light-gray);
+    color: var(--sw-yellow);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Electrolize Cyrillic', sans-serif;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.toggle-upgrades-btn:hover {
+    background-color: var(--sw-yellow);
+    color: #000;
+}
+
+.toggle-upgrades-btn i {
+    transition: transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Секция снаряжения */
+.gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.gear-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--sw-light-gray);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.gear-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Секция реликвий */
+.relic-selector {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.relic-level {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--sw-light-gray);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.relic-level:hover {
+    background-color: var(--sw-yellow);
+    color: #000;
+}
+
+.relic-level.active {
+    background-color: var(--sw-yellow);
+    color: #000;
+}
+
+.stats-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    background-color: var(--sw-darker);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--sw-light-gray);
+}
+
+.stat-name {
+    color: #aaa;
+}
+
+.stat-value {
+    font-weight: bold;
+}
+
+/* Места добычи осколков */
+.shard-locations {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--sw-light-gray);
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--sw-light-gray);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.location i {
+    color: var(--sw-yellow);
+}
+
+/* Подвал */
+.sw-footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+    font-size: 0.8rem;
+    border-top: 1px solid var(--sw-light-gray);
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    .character-info {
+        flex-direction: column;
+    }
+    
+    .character-portrait {
+        flex: 0 0 auto;
+        margin: 0 auto;
+    }
+    
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .stats-display {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .stats-display {
+        grid-template-columns: 1fr;
+    }
+    
+    .gear-grid, .locations-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .ability-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .ability-title {
+        width: 100%;
+    }
 }
