@@ -577,3 +577,211 @@ p {
         width: 100%;
     }
 }
+
+
+
+
+/* Стили для пустой таблицы */
+.empty-table-section {
+    background-color: var(--sw-darker);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.sw-button {
+    background-color: var(--sw-yellow);
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Electrolize', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.sw-button:hover {
+    background-color: #ffdf00;
+}
+
+.sw-button:disabled {
+    background-color: var(--sw-light-gray);
+    color: #666;
+    cursor: not-allowed;
+}
+
+.sw-table-wrapper {
+    overflow-x: auto;
+}
+
+.sw-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.sw-table th {
+    background-color: var(--sw-light-gray);
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--sw-yellow);
+}
+
+.sw-table th i {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.sw-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--sw-light-gray);
+    text-align: center;
+}
+
+.sw-table tr:last-child td {
+    border-bottom: none;
+}
+
+.sw-table tr:hover {
+    background-color: rgba(255, 232, 31, 0.05);
+}
+
+.empty-row {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.empty-row td {
+    padding: 10px 0;
+}
+
+.empty-row i {
+    font-size: 3rem;
+    color: var(--sw-light-gray);
+    margin-bottom: 10px;
+}
+
+.empty-row p {
+    margin-bottom: 10px;
+    color: #aaa;
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rows-per-page {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sw-select {
+    background-color: var(--sw-gray);
+    color: white;
+    border: 1px solid var(--sw-light-gray);
+    padding: 5px 10px;
+    border-radius: 3px;
+    outline: none;
+}
+
+/* Стили для сортировки */
+.sw-table th.asc {
+    color: var(--sw-red);
+}
+
+.sw-table th.desc {
+    color: var(--sw-green);
+}
+
+.sw-table th i.fa-sort-up, 
+.sw-table th i.fa-sort-down {
+    color: inherit;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .table-controls {
+        flex-direction: column;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .table-footer {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+
+
+/* Стили для сообщения "Ничего не найдено" */
+.no-results td {
+    text-align: center;
+    padding: 40px 0;
+    color: #aaa;
+}
+
+.no-results i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--sw-light-gray);
+}
+
+/* Стили для поиска */
+#nameSearch {
+    width: 100%;
+    padding: 8px 15px 8px 30px;
+    background-color: var(--sw-gray);
+    border: 1px solid var(--sw-light-gray);
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+#nameSearch:focus {
+    outline: none;
+    border-color: var(--sw-yellow);
+    box-shadow: 0 0 5px rgba(255, 232, 31, 0.3);
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--sw-yellow);
+}
