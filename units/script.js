@@ -18,6 +18,137 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+        // Элементы поиска
+    const searchInput = document.getElementById('nameSearch');
+    const table = document.querySelector('.sw-table');
+    const tbody = table.querySelector('tbody');
+    const originalRows = Array.from(tbody.querySelectorAll('tr'));
+    
+    // Обработчик поиска
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.trim().toLowerCase();
+        
+        originalRows.forEach(row => {
+            const nameCell = row.children[1]; // Второй столбец (название)
+            const nameText = nameCell.textContent.toLowerCase();
+            
+            if (searchTerm === '' || nameText.includes(searchTerm)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+        
+        // Показываем сообщение, если ничего не найдено
+        showNoResultsMessage();
+    });
+    
+    function showNoResultsMessage() {
+        const visibleRows = Array.from(tbody.querySelectorAll('tr')).filter(
+            row => row.style.display !== 'none'
+        );
+        
+        const noResultsRow = tbody.querySelector('tr.no-results');
+        
+        if (visibleRows.length === 0) {
+            if (!noResultsRow) {
+                const row = document.createElement('tr');
+                row.className = 'no-results';
+                row.innerHTML = `
+                    <td colspan="${table.querySelectorAll('th').length}">
+                        <i class="fas fa-search"></i>
+                        <p>Ничего не найдено</p>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            }
+        } else if (noResultsRow) {
+            noResultsRow.remove();
+        }
+    }
+
+   const sortableHeaders = document.querySelectorAll('.sw-table th:not(.fixed-column) i.fa-sort');
+    
+    sortableHeaders.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const th = this.parentElement;
+            const table = th.closest('table');
+            const columnIndex = Array.from(th.parentElement.children).indexOf(th);
+            const isAscending = !th.classList.contains('asc');
+            
+            // Сбрасываем сортировку для всех колонок (кроме фиксированной)
+            table.querySelectorAll('th:not(.fixed-column)').forEach(header => {
+                header.classList.remove('asc', 'desc');
+                const icon = header.querySelector('i');
+                if (icon) icon.className = 'fas fa-sort';
+            });
+            
+            // Устанавливаем направление сортировки
+            th.classList.add(isAscending ? 'asc' : 'desc');
+            this.className = isAscending ? 'fas fa-sort-up' : 'fas fa-sort-down';
+            
+            // Сортируем таблицу (начиная со второго столбца)
+            sortTable(table, columnIndex, isAscending);
+        });
+    });
+    
+    function sortTable(table, columnIndex, ascending) {
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        
+        // Сохраняем оригинальный порядок ID
+        const originalOrder = rows.map(row => row.children[0].textContent.trim());
+        
+        // Сортируем строки (исключая первый столбец из сравнения)
+        rows.sort((a, b) => {
+            const aText = a.children[columnIndex].textContent.trim();
+            const bText = b.children[columnIndex].textContent.trim();
+            return compareValues(aText, bText, ascending);
+        });
+        
+        // Восстанавливаем оригинальный порядок ID
+        rows.forEach((row, index) => {
+            row.children[0].textContent = originalOrder[index];
+        });
+        
+        // Обновляем таблицу
+        tbody.innerHTML = '';
+        rows.forEach(row => tbody.appendChild(row));
+    }
+    
+    // Функция сравнения значений с учетом чисел, русских и английских букв
+    function compareValues(a, b, ascending = true) {
+        // Проверяем, являются ли значения числами
+        const aNum = parseFloat(a.replace(/\s+/g, '').replace(',', '.'));
+        const bNum = parseFloat(b.replace(/\s+/g, '').replace(',', '.'));
+        
+        if (!isNaN(aNum) && !isNaN(bNum)) {
+            return ascending ? aNum - bNum : bNum - aNum;
+        }
+        
+        // Если одно значение число, а другое нет - числа идут первыми
+        if (!isNaN(aNum) && isNaN(bNum)) return ascending ? -1 : 1;
+        if (isNaN(aNum) && !isNaN(bNum)) return ascending ? 1 : -1;
+        
+        // Сравниваем строки с учетом языка
+        const aIsRussian = isRussian(a);
+        const bIsRussian = isRussian(b);
+        
+        // Если одна строка русская, а другая английская
+        if (aIsRussian && !bIsRussian) return ascending ? -1 : 1;
+        if (!aIsRussian && bIsRussian) return ascending ? 1 : -1;
+        
+        // Сравниваем строки на одном языке
+        return ascending 
+            ? a.localeCompare(b, aIsRussian ? 'ru' : 'en') 
+            : b.localeCompare(a, bIsRussian ? 'ru' : 'en');
+    }
+    
+    // Функция проверки, содержит ли строка русские буквы
+    function isRussian(str) {
+        return /[а-яА-ЯЁё]/.test(str);
+    }
+
     document.querySelectorAll('.toggle-upgrades-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const table = this.nextElementSibling;
