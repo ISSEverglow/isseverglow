@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Войны гильдий</title>
+    <link rel="stylesheet" href="./units/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="star-wars-theme">
+        <header class="sw-header">
+            <div class="logo">
+                <img src="./img/logo.jpg" alt="Лого">
+            </div>
+            <h1>ISS EVERGLOW | ВОЙНЫ ГИЛЬДИЙ</h1>
+        </header>
+
+        <div class="character-container">
+            <section class="empty-table-section">
+                <h2><i class="fas fa-table"></i> РЕЗУЛЬТАТИВНОСТЬ УЧАСТНИКОВ</h2>
+                
+                <div class="table-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="nameSearch" placeholder="Поиск по никнейму игрока...">
+                    </div>
+                </div>
+                
+                <div class="sw-table-wrapper">
+                    <table class="sw-table">
+                        <thead>
+                            <tr>
+                                <th class="fixed-column">Место</th>
+                                <th>Никнейм <i class="fas fa-sort"></i></th>
+                                <th>Стяги (оборона) <i class="fas fa-sort"></i></th>
+                                <th>Стяги (атака) <i class="fas fa-sort"></i></th>
+                                <th>Сумма стягов <i class="fas fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td style="text-align: left;">Tulak Hord</td>
+                                <td>398</td>
+                                <td>58</td>
+                                <td>456</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td style="text-align: left;">Jinx</td>
+                                <td>958</td>
+                                <td>222</td>
+                                <td>1180</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td style="text-align: left;">ЦЕЗАРЬ</td>
+                                <td>804</td>
+                                <td>60</td>
+                                <td>864</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td style="text-align: left;">Царь</td>
+                                <td>556</td>
+                                <td>95</td>
+                                <td>651</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td style="text-align: left;">Harvestor</td>
+                                <td>308</td>
+                                <td>304</td>
+                                <td>612</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td style="text-align: left;">ReaZzy</td>
+                                <td>338</td>
+                                <td>271</td>
+                                <td>609</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td style="text-align: left;">Decadance</td>
+                                <td>466</td>
+                                <td>117</td>
+                                <td>583</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td style="text-align: left;">Gall</td>
+                                <td>458</td>
+                                <td>120</td>
+                                <td>578</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td style="text-align: left;">Jade Bele</td>
+                                <td>278</td>
+                                <td>295</td>
+                                <td>573</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td style="text-align: left;">Dart Grinvald</td>
+                                <td>564</td>
+                                <td>0</td>
+                                <td>564</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td style="text-align: left;">tie23he</td>
+                                <td>436</td>
+                                <td>124</td>
+                                <td>560</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td style="text-align: left;">ЁшкинКот</td>
+                                <td>458</td>
+                                <td>96</td>
+                                <td>554</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td style="text-align: left;">Lapkaz</td>
+                                <td>454</td>
+                                <td>54</td>
+                                <td>508</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td style="text-align: left;">Dark Skorpion</td>
+                                <td>304</td>
+                                <td>143</td>
+                                <td>447</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td style="text-align: left;">Street Soul</td>
+                                <td>402</td>
+                                <td>40</td>
+                                <td>442</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td style="text-align: left;">Dart Dainelly</td>
+                                <td>428</td>
+                                <td>0</td>
+                                <td>428</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td style="text-align: left;">Christmas</td>
+                                <td>278</td>
+                                <td>140</td>
+                                <td>418</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td style="text-align: left;">Ant Be</td>
+                                <td>368</td>
+                                <td>34</td>
+                                <td>402</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td style="text-align: left;">W1nReal</td>
+                                <td>308</td>
+                                <td>91</td>
+                                <td>399</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td style="text-align: left;">Grek</td>
+                                <td>218</td>
+                                <td>181</td>
+                                <td>399</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td style="text-align: left;">Линамуил</td>
+                                <td>278</td>
+                                <td>75</td>
+                                <td>353</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td style="text-align: left;">MrRetard</td>
+                                <td>290</td>
+                                <td>60</td>
+                                <td>350</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td style="text-align: left;">Cultere</td>
+                                <td>150</td>
+                                <td>199</td>
+                                <td>349</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td style="text-align: left;">fen1x</td>
+                                <td>214</td>
+                                <td>131</td>
+                                <td>345</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td style="text-align: left;">Дарт Реван</td>
+                                <td>124</td>
+                                <td>199</td>
+                                <td>323</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td style="text-align: left;">Ганч</td>
+                                <td>300</td>
+                                <td>20</td>
+                                <td>320</td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td style="text-align: left;">RiDaura</td>
+                                <td>244</td>
+                                <td>56</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td style="text-align: left;">Faddes</td>
+                                <td>214</td>
+                                <td>80</td>
+                                <td>294</td>
+                            </tr>
+                            <tr>
+                                <td>29</td>
+                                <td style="text-align: left;">Lapki v Tapki</td>
+                                <td>214</td>
+                                <td>80</td>
+                                <td>294</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td style="text-align: left;">PRΞDATOR</td>
+                                <td>124</td>
+                                <td>161</td>
+                                <td>285</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td style="text-align: left;">tvoi otchim</td>
+                                <td>282</td>
+                                <td>0</td>
+                                <td>282</td>
+                            </tr>
+                            <tr>
+                                <td>32</td>
+                                <td style="text-align: left;">Aokigahara</td>
+                                <td>244</td>
+                                <td>35</td>
+                                <td>279</td>
+                            </tr>
+                            <tr>
+                                <td>33</td>
+                                <td style="text-align: left;">Irri MakVanish</td>
+                                <td>278</td>
+                                <td>0</td>
+                                <td>278</td>
+                            </tr>
+                            <tr>
+                                <td>34</td>
+                                <td style="text-align: left;">Askarikgh</td>
+                                <td>274</td>
+                                <td>0</td>
+                                <td>274</td>
+                            </tr>
+                            <tr>
+                                <td>35</td>
+                                <td style="text-align: left;">Stalker73</td>
+                                <td>252</td>
+                                <td>0</td>
+                                <td>252</td>
+                            </tr>
+                            <tr>
+                                <td>36</td>
+                                <td style="text-align: left;">Normalniy Nickname Blyat</td>
+                                <td>240</td>
+                                <td>0</td>
+                                <td>240</td>
+                            </tr>
+                            <tr>
+                                <td>37</td>
+                                <td style="text-align: left;">majonesny voin</td>
+                                <td>60</td>
+                                <td>159</td>
+                                <td>219</td>
+                            </tr>
+                            <tr>
+                                <td>38</td>
+                                <td style="text-align: left;">Спиногрыз</td>
+                                <td>218</td>
+                                <td>0</td>
+                                <td>218</td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td style="text-align: left;">Saw2499</td>
+                                <td>214</td>
+                                <td>0</td>
+                                <td>214</td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                                <td style="text-align: left;">LionelAndressMessi</td>
+                                <td>124</td>
+                                <td>87</td>
+                                <td>211</td>
+                            </tr>
+                            <tr>
+                                <td>41</td>
+                                <td style="text-align: left;">Erg Noor</td>
+                                <td>150</td>
+                                <td>35</td>
+                                <td>185</td>
+                            </tr>
+                            <tr>
+                                <td>42</td>
+                                <td style="text-align: left;">миша 124</td>
+                                <td>184</td>
+                                <td>0</td>
+                                <td>184</td>
+                            </tr>
+                            <tr>
+                                <td>43</td>
+                                <td style="text-align: left;">Муад'Диб</td>
+                                <td>154</td>
+                                <td>0</td>
+                                <td>154</td>
+                            </tr>
+                            <tr>
+                                <td>44</td>
+                                <td style="text-align: left;">C'zar</td>
+                                <td>90</td>
+                                <td>0</td>
+                                <td>90</td>
+                            </tr>
+                            <tr>
+                                <td>45</td>
+                                <td style="text-align: left;">Makintoshi</td>
+                                <td>0</td>
+                                <td>77</td>
+                                <td>77</td>
+                            </tr>
+                            <tr>
+                                <td>46</td>
+                                <td style="text-align: left;">Marriman</td>
+                                <td>0</td>
+                                <td>61</td>
+                                <td>61</td>
+                            </tr>
+                            <tr>
+                                <td>47</td>
+                                <td style="text-align: left;">olgabuzova228</td>
+                                <td>60</td>
+                                <td>0</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>48</td>
+                                <td style="text-align: left;">OVΞRLORD</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-footer">
+                    <div class="pagination">
+                        <button class="sw-button" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span>Страница 1 из 1</span>
+                        <button class="sw-button" disabled>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <!--<div class="rows-per-page">
+                        <span>Строк на странице:</span>
+                        <select class="sw-select">
+                            <option>10</option>
+                            <option selected>25</option>
+                            <option>50</option>
+                            <option>100</option>
+                        </select>
+                    </div>-->
+                </div>
+            </section>
+        </div>
+
+        <footer class="sw-footer">
+            <p>Фанатский сайт. STAR WARS и все связанные элементы являются товарными знаками Lucasfilm Ltd.</p>
+        </footer>
+    </div>
+
+    <script src="./units/script.js"></script>
+</body>
+</html>
